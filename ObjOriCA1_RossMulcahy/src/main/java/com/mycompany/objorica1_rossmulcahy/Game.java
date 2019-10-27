@@ -1,27 +1,52 @@
 package com.mycompany.objorica1_rossmulcahy;
-
 import java.util.ArrayList;
-
 /**
  *
  * @author Rossm
  */
 public class Game 
 {
-    private ArrayList<Levels> level = new ArrayList<Levels>();
+//VARIABLES
+    private ArrayList<Levels> roster = new ArrayList<Levels>();
+    private int numberOfLLevels;
+    private String title;
+    private String platform;
+    private boolean multiplayer;
     
-    public static void main(String[] args) 
+//CONSTRUCTOR
+    public Game(int numberOfLLevels, String title, String platform, boolean multiplayer) 
     {
-        
+        this.numberOfLLevels = numberOfLLevels;
+        this.title = title;
+        this.platform = platform;
+        this.multiplayer = multiplayer;
+    }
+//GETTERS
+    public int getNumberOfLLevels() 
+    {
+        return numberOfLLevels;
+    }
+
+    public String getTitle() 
+    {
+        return title;
+    }
+
+    public String getPlatform() 
+    {
+        return platform;
+    }
+
+    public boolean isMultiplayer() 
+    {
+        return multiplayer;
     }
     
-    public void addLevel()
+//METHODS
+    public void addLevel() 
     {
-        level.add(new Levels("The Armory"));
+        Levels level = new Levels("Armory", "Heavily guarded military base", 8);
+        roster.add(level);
     }
     
-    public void addPlayerToLevel()
-    {
-        Levels.addPlayer();
-    }
 }

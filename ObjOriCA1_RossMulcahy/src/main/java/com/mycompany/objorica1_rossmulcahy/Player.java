@@ -1,7 +1,5 @@
 package com.mycompany.objorica1_rossmulcahy;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Rossm
@@ -9,32 +7,42 @@ import java.util.ArrayList;
 public class Player 
 {
 //VARIABLES
-    private int Health;
-    private String Name;
+    private int health;
+    private String name;
 //CONSTRUCTOR
-    public Player(int Health, String Name) 
+    public Player(String name) 
     {
-        this.Health = Health;
-        this.Name = Name;
+        this.health = 100;
+        this.name = name;
     }
 //GETTERS
-    private int getHealth() 
+    public int getHealth() 
     {
-        return Health;
+        return health;
     }
 
-    private String getName() 
+    public String getName() 
     {
-        return Name;
+        return name;
     }
-//SETTERS
-    private void setHealth() 
+//METHODS
+    public void updateHealth(int change, boolean damaged)
     {
-        this.Health = 100;
-    }
-
-    private void setName(String Name) 
-    {
-        this.Name = Name;
+        if(damaged == true)
+        {
+            this.health -= change;
+            if(this.health <= 0)
+            {
+                System.out.println("Player " + this.name + " Died.");
+            }
+        }
+        else
+        {
+            this.health += change;
+            if(this.health > 100)
+            {
+                this.health = 100;
+            }
+        }
     }
 }

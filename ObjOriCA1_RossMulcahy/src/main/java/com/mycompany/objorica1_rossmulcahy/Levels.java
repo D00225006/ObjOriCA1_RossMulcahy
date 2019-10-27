@@ -1,42 +1,43 @@
 package com.mycompany.objorica1_rossmulcahy;
-
 import java.util.ArrayList;
-
 /**
  *
  * @author Rossm
  */
-public class Levels 
+public class Levels
 {
 //VARIABLES
-    private ArrayList<Player> players = new ArrayList<Player>();
-    private String Name; 
+    private ArrayList<Player> currentPlayers = new ArrayList<Player>();
+    private String name;
+    private String description;
+    private int size;
+    
 //CONSTRUCTOR
-    public Levels(String Name)
+    public Levels(String name, String description, int size) 
     {
-        this.Name = Name;
+        this.name = name;
+        this.description = description;
+        this.size = size;
     }
+    
 //GETTERS
     public String getName() 
     {
-        return Name;
+        return name;
     }
-    
-//SETTERS
-    public void setName(String Name)
+    public String getDescription() 
     {
-        this.Name = Name;
+        return description;
+    }
+    public int getSize() 
+    {
+        return size;
     }
 
 //METHODS
-    public void addPlayer() {
-        players.add(new Player(100, "Darrell"));
-    }
-    public void changeHealth()
+    public void addPlayer() 
     {
-        if(Player.getHealth() <= 0)
-        {
-            players.remove(this.players);
-        }
+        Player player1 = new Player("Darrell");
+        currentPlayers.add(player1);
     }
 }
