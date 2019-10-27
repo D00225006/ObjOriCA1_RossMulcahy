@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Game 
 {
 //VARIABLES
-    private ArrayList<Levels> roster = new ArrayList<Levels>();
+    private ArrayList<Level> roster = new ArrayList<Level>();
     private int numberOfLLevels;
     private String title;
     private String platform;
@@ -43,9 +43,8 @@ public class Game
     }
     
 //METHODS
-    public void addLevel() 
+    public void addLevel(Level level) 
     {
-        Levels level = new Levels("Armory", "Heavily guarded military base", 8);
         roster.add(level);
     }
     
