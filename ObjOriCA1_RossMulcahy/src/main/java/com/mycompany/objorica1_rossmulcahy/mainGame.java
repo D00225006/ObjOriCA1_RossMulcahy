@@ -36,5 +36,7 @@ public class mainGame
         level4.addPlayer(player3);
         level1.addPlayer(player4);
         level3.addPlayer(player5);
+        
+        level3.listPlayers();
     }
 }

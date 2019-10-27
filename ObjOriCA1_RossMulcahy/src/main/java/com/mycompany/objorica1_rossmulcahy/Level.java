@@ -43,4 +43,11 @@ public class Level
     {
         currentPlayers.get(number);
     }
+    public void listPlayers()
+    {
+        for(int i = 0; i < currentPlayers.size(); i++)
+        {
+            System.out.println(currentPlayers.get(i).getName() + ": " + currentPlayers.get(i).getHealth());
+        }
+    }
 }
